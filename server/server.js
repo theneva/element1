@@ -6,11 +6,19 @@ app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/../angular'));
 
-app.get('/api', function(req, res) {
-    res.json([
-        {username: 'Theneva'},
-        {username: 'theknarf'}
-    ]);
+var users = [
+    {username: 'Theneva'},
+    {username: 'theknarf'}
+];
+
+app.get('/api/users', function(req, res) {
+    res.json(users);
+});
+
+app.post('/api/users', function(req, res) {
+    var newUser = req.body;
+    users.push(newUser);
+    res.json(newUser);
 });
 
 app.listen(9876);

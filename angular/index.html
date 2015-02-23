@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Brukere</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
 <div class="container" ng-controller="UsersController">
     <h1>Users</h1>
-    <ul ng-repeat="user in users">
+
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="username"/>
+        <button class="btn btn-success" ng-click="createUser(username)">Create</button>
+    </div>
+
+    <ul class="list-group-item" ng-repeat="user in users">
         <li>{{user.username}}</li>
     </ul>
 </div>

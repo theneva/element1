@@ -1,12 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="element1">
 <head>
     <meta charset="UTF-8">
     <title>Brukere</title>
 </head>
 <body>
-<h1>HI THERE</h1>
+<div class="container" ng-controller="UsersController">
+    <h1>Users</h1>
+    <ul ng-repeat="user in users">
+        <li>{{user.username}}</li>
+    </ul>
+</div>
 
+<script src="bower_components/angular/angular.min.js"></script>
 <script src="js/controllers.js"></script>
 </body>
 </html>
